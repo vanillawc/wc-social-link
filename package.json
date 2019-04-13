@@ -12,5 +12,8 @@
   "repository": "https://github.com/vanillawc/wc-social/",
   "main": "src/wc-markdown.js",
   "scripts": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "rimraf": "^2.6.3",
+    "vanillawc": "github:vanillawc/vanillawc"
+  }
 }
