@@ -11,9 +11,12 @@
   ],
   "repository": "https://github.com/vanillawc/wc-social/",
   "main": "src/wc-markdown.js",
-  "scripts": {},
+  "scripts": {
+  	"build": "npm run clean && npm run build:assets",
+  	"clean": "rimraf ./assets/",
+  	"build:assets": "cp -r ./node_modules/vanillawc/assets/social-icons ./assets"
+  },
   "devDependencies": {
-    "rimraf": "^2.6.3",
     "vanillawc": "github:vanillawc/vanillawc"
   }
 }
