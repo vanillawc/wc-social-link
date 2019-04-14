@@ -15,7 +15,8 @@
     "start": "npx live-server --open=demo",
     "build": "npm run clean && npm run build:assets",
     "clean": "rimraf ./assets/",
-    "build:assets": "cp -r ./node_modules/vanillawc/assets/social-icons ./assets"
+    "build:assets": "cp -r ./node_modules/vanillawc/assets/social-icons ./assets",
+    "postversion": "git push --follow-tags"
   },
   "devDependencies": {
     "live-server": "^1.2.1",
