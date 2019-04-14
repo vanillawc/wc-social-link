@@ -48,7 +48,6 @@ export class WCSocial extends HTMLElement {
         break;
       default:
         throw Error(`WCSocial: network ${this.network} not supported`);
-        return;
     }
 
     // set the icon
@@ -58,25 +57,34 @@ export class WCSocial extends HTMLElement {
 
   setLink() {
     let href;
+    let title;
 
     // look up the network profile url
     switch(this.network) {
       case 'github':
         href = `https://github.com/${this.handle}`;
+        title = 'GitHub';
         break;
       case 'linkedin':
         href = `https://linkedin.com/in/${this.handle}`;
+        title = 'LinkedIn';
         break;
       case 'stackoverflow':
         href = `https://stackoverflow.com/u/${this.handle}`;
+        title = 'StackOverflow'
         break;
       case 'twitter':
         href = `https://twitter.com/${this.handle}`;
+        title = 'Twitter';
+        break;
+      default:
+        throw Error(`WCSocial: network ${this.network} not supported`);
     }
 
     // set the link
     const a = this.shadowRoot.querySelector('a');
     a.setAttribute('href', href);
+    a.setAttribute('title', `${title} link`);
   }
 
 }
