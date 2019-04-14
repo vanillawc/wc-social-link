@@ -1,12 +1,6 @@
 const template = document.createElement('template');
 template.innerHTML = `
-<style>
-  svg {
-    width: 32px;
-    height: 32px;
-  }
-</style>
-<a><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512">
+<a style="width: inherit; height: inherit"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512" style="width: inherit; height: inherit;">
   <use />
 </svg></a>
 `;
@@ -15,8 +9,12 @@ export class WCSocial extends HTMLElement {
 
   constructor() {
     super();
-    const shadowRoot = this.attachShadow({mode: 'open'});
+    this.attachShadow({mode: 'open'});
     this.shadowRoot.appendChild(document.importNode(template.content, true));
+
+    // set default width/height
+    this.style.width = (this.style.width) ?  this.style.width : '32px';
+    this.style.height = (this.style.height)? this.style.height : '32px';
   };
   
   async connectedCallback() {
