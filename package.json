@@ -17,6 +17,8 @@
   	"build:assets": "cp -r ./node_modules/vanillawc/assets/social-icons ./assets"
   },
   "devDependencies": {
+    "live-server": "^1.2.1",
+    "rimraf": "^2.6.3",
     "vanillawc": "github:vanillawc/vanillawc"
   }
 }
