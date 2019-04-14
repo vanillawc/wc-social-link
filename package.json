@@ -10,7 +10,7 @@
     "social"
   ],
   "repository": "https://github.com/vanillawc/wc-social/",
-  "main": "src/wc-markdown.js",
+  "main": "src/wc-social-link.js",
   "scripts": {
     "start": "npx live-server --open=demo",
     "build": "npm run clean && npm run build:assets",
