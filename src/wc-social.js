@@ -28,11 +28,11 @@ export class WCSocial extends HTMLElement {
     }
 
     this.handle = (this.hasAttribute('handle') ? this.getAttribute('handle') : null);
-    if(this.handle) {
+    this.href = (this.hasAttribute('href') ? this.getAttribute('href') : null);
+
+    if(this.handle || this.href) {
       this.setLink();
-    } else {
-      throw Error(`WCSocial: 'handle' attribute is required but missing`);
-    }    
+    }
   }
 
   setIcon() {
@@ -79,6 +79,11 @@ export class WCSocial extends HTMLElement {
         break;
       default:
         throw Error(`WCSocial: network ${this.network} not supported`);
+    }
+
+    // overrid the link if the 'href' attribute is set
+    if (this.href) {
+      href = this.href;
     }
 
     // set the link
