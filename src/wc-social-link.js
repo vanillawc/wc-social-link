@@ -22,7 +22,9 @@ export class WCSocialLink extends HTMLElement {
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    this[name] = newValue;
+    if (oldValue !== newValue) {
+      this[name] = newValue;
+    }
   }
 
   async connectedCallback() {
