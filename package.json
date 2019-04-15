@@ -9,7 +9,7 @@
     "vanilla",
     "social"
   ],
-  "repository": "https://github.com/vanillawc/wc-social/",
+  "repository": "https://github.com/vanillawc/wc-social-link/",
   "main": "src/wc-social-link.js",
   "scripts": {
     "start": "npx live-server --open=demo",

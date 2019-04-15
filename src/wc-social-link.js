@@ -5,7 +5,7 @@ template.innerHTML = `
 </svg></a>
 `;
 
-export class WCSocial extends HTMLElement {
+export class WCSocialLink extends HTMLElement {
 
   constructor() {
     super();
@@ -134,4 +134,4 @@ export class WCSocial extends HTMLElement {
 
 }
 
-customElements.define('wc-social', WCSocial);
+customElements.define('wc-social-link', WCSocialLink);
