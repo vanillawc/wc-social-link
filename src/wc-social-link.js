@@ -48,6 +48,7 @@ export class WCSocialLink extends HTMLElement {
       case 'twitter':
       case 'rss':
       case 'twitch':
+      case 'gitlab':
         href += `${value}.svg#${value}`;
         break;
       default:
@@ -83,6 +84,9 @@ export class WCSocialLink extends HTMLElement {
         break;
       case 'twitch':
         href = `https://twitch.tv/${value}`;
+        break;
+      case 'gitlab':
+        href = `https://gitlab.com/${value}`;
         break;
       default:
         throw Error(`WCSocialLink: ${this.network} doesn't support the 'handle' attribute`);
@@ -131,6 +135,9 @@ export class WCSocialLink extends HTMLElement {
           break;
         case 'twitch':
           value = 'Twitch Channel';
+          break;
+        case 'gitlab':
+          value = 'GitLab Profile';
           break;
       }
     }
