@@ -28,9 +28,6 @@ export class WCSocialLink extends HTMLElement {
   }
 
   async connectedCallback() {
-    this.network = this.hasAttribute('network') ? this.getAttribute('network') : null;
-    this.handle = (this.hasAttribute('handle') ? this.getAttribute('handle') : null);
-    this.href = this.hasAttribute('href') ? this.getAttribute('href') : null;
     this.title = (this.hasAttribute('title') ? this.getAttribute('title') : null);
   }
 
