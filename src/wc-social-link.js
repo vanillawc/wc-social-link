@@ -47,6 +47,7 @@ export class WCSocialLink extends HTMLElement {
       case 'stackoverflow':
       case 'twitter':
       case 'rss':
+      case 'twitch':
         href += `${value}.svg#${value}`;
         break;
       default:
@@ -80,6 +81,9 @@ export class WCSocialLink extends HTMLElement {
       case 'twitter':
         href = `https://twitter.com/${value}`;
         break;
+      case 'twitch':
+        href = `https://twitch.tv/${value}`;
+        break;
       default:
         throw Error(`WCSocialLink: ${this.network} doesn't support the 'handle' attribute`);
     }
@@ -111,19 +115,23 @@ export class WCSocialLink extends HTMLElement {
     if (!value) {
       switch(this.network) {
         case 'github':
-          value = 'GitHub Link';
+          value = 'GitHub Profile';
           break;
         case 'linkedin':
-          value = 'LinkedIn Link';
+          value = 'LinkedIn Profile';
           break;
         case 'stackoverflow':
-          value = 'StackOverflow Link'
+          value = 'StackOverflow Profile'
           break;
         case 'twitter':
-          value = 'Twitter Link';
+          value = 'Twitter Profile';
           break;
         case 'rss':
           value = 'RSS Feed';
+          break;
+        case 'twitch':
+          value = 'Twitch Channel';
+          break;
       }
     }
 
