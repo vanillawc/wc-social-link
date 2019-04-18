@@ -1,4 +1,4 @@
-<h1>WC-Social-Link</h1>
+# WC-Social-Link
 
 [![npm](https://badgen.net/npm/v/@vanillawc/wc-social-link)](https://www.npmjs.com/package/@vanillawc/wc-social-link)
 [![downloads](https://badgen.net/npm/dt/@vanillawc/wc-social-link)](https://www.npmjs.com/package/@vanillawc/wc-social-link)
