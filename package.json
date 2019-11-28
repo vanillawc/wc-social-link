@@ -13,12 +13,14 @@
   "main": "src/wc-social-link.js",
   "scripts": {
     "start": "npx live-server --open=demo",
+    "lint": "semistandard",
     "build": "npm run clean && npm run build:assets",
     "clean": "npx rimraf ./assets/",
     "build:assets": "cp -r ./node_modules/vanillawc/assets/social-icons ./assets",
     "postversion": "git push --follow-tags"
   },
   "devDependencies": {
+    "semistandard": "^14.2.0",
     "vanillawc": "github:vanillawc/vanillawc"
   }
 }

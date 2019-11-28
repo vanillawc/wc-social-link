@@ -1,3 +1,4 @@
+/* eslint no-undef: 0 */
 const template = document.createElement('template');
 template.innerHTML = `
 <a style="width: inherit; height: inherit"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512" style="width: inherit; height: inherit;">
@@ -6,35 +7,34 @@ template.innerHTML = `
 `;
 
 export class WCSocialLink extends HTMLElement {
-
-  constructor() {
+  constructor () {
     super();
-    this.attachShadow({mode: 'open'});
+    this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(document.importNode(template.content, true));
+  }
 
-    // set default width/height
-    this.style.width = (this.style.width) ?  this.style.width : '32px';
-    this.style.height = (this.style.height)? this.style.height : '32px';
-  };
-
-  static get observedAttributes() {
+  static get observedAttributes () {
     return ['network', 'href', 'handle', 'title'];
   }
 
-  attributeChangedCallback(name, oldValue, newValue) {
+  attributeChangedCallback (name, oldValue, newValue) {
     if (oldValue !== newValue) {
       this[name] = newValue;
     }
   }
 
-  async connectedCallback() {
+  async connectedCallback () {
+    // set default width/height
+    this.style.width = (this.style.width) ? this.style.width : '32px';
+    this.style.height = (this.style.height) ? this.style.height : '32px';
+
     this.title = (this.hasAttribute('title') ? this.getAttribute('title') : null);
   }
 
-  get network() { return this.getAttribute('network'); }
-  set network(value) {
+  get network () { return this.getAttribute('network'); }
+  set network (value) {
     // Edge: 'network' is required
-    if (!value) { throw Error(`WCSocial: 'network' attribue is require but missing`); }
+    if (!value) { throw Error('WCSocial: \'network\' attribue is require but missing'); }
 
     // update attribute state
     this.setAttribute('network', value);
@@ -61,8 +61,8 @@ export class WCSocialLink extends HTMLElement {
     use.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', href);
   }
 
-  get handle() { return this.getAttribute('handle'); }
-  set handle(value) {
+  get handle () { return this.getAttribute('handle'); }
+  set handle (value) {
     // Edge: 'handle' not set
     if (value === null) { this.removeAttribute('handle'); return; }
 
@@ -70,7 +70,7 @@ export class WCSocialLink extends HTMLElement {
     this.setAttribute('handle', value);
 
     let href;
-    switch(this.network) {
+    switch (this.network) {
       case 'github':
         href = `https://github.com/${value}`;
         break;
@@ -98,11 +98,8 @@ export class WCSocialLink extends HTMLElement {
     this.href = href;
   }
 
-  get href() {
-    return this.getAttribute('href');
-  }
-
-  set href(value) {
+  get href () { return this.getAttribute('href'); }
+  set href (value) {
     // Edge: 'href' not set
     if (value === null) { this.removeAttribute('href'); return; }
 
@@ -114,14 +111,11 @@ export class WCSocialLink extends HTMLElement {
     a.setAttribute('href', value);
   }
 
-  get title() {
-    return this.getAttribute('title');
-  }
-
-  set title(value) {
+  get title () { return this.getAttribute('title'); }
+  set title (value) {
     // Default: Set to '[network] link'
     if (!value) {
-      switch(this.network) {
+      switch (this.network) {
         case 'github':
           value = 'GitHub Profile';
           break;
@@ -129,7 +123,7 @@ export class WCSocialLink extends HTMLElement {
           value = 'LinkedIn Profile';
           break;
         case 'stackoverflow':
-          value = 'StackOverflow Profile'
+          value = 'StackOverflow Profile';
           break;
         case 'twitter':
           value = 'Twitter Profile';
@@ -156,7 +150,6 @@ export class WCSocialLink extends HTMLElement {
     const a = this.shadowRoot.querySelector('a');
     a.setAttribute('title', value);
   }
-
 }
 
 customElements.define('wc-social-link', WCSocialLink);
