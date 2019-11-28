@@ -37,17 +37,25 @@ Provide the name of the social network (ex twitter) and your user handle (ie use
 
 *Note: [StackOverflow is dumb][], your profile can't be linked to using just your username so you'll have to use your USERID as the handle.*
 
+***Demo: [WC-Social-Link - Demo][]***
+
 ### Basic Usage w/ Custom Link
 
 Alternatively, instead of providing a handle and relying on the built-in link you can just provide your own.
 
 <wc-social network="github" href="https://github.com/evanplaice"></wc-social>
 
+***Demo: [WC-Social-Link - 'link'][]***
+
+
 ### Override the Title
 
 For a11y, the component automatically defined a `title` attribute as `[network] link`. If you'd like to add a more compelling title, just define it as an attribute.
 
 <wc-social network="github" handle="evanplaice" title="Interesting Title"></wc-social>
+
+***Demo: [WC-Social-Link - 'title'][]***
+
 
 ### Styling
 
@@ -64,5 +72,9 @@ Default Styles
 - stroke: black
 - fill: black
 
+
+[WC-Social-Link - Demo]: https://vanillawc.github.io/wc-social-link/demo/basic-usage.html
+[WC-Social-Link - 'link']: https://vanillawc.github.io/wc-social-link/demo/link-attribute.html
+[WC-Social-Link - 'title']: https://vanillawc.github.io/wc-social-link/demo/title-attribute.html
 [issues]: https://github.com/vanillawc/wc-social-link/issues
 [StackOverflow is dumb]: https://meta.stackexchange.com/a/914/147836
