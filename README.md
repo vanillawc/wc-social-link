@@ -1,9 +1,11 @@
 # WC-Social-Link
 
+[![GitHub release](https://img.shields.io/github/v/release/vanillawc/wc-social-link.svg)](https://github.com/vanillawc/wc-social-link/releases)
 [![npm](https://badgen.net/npm/v/@vanillawc/wc-social-link)](https://www.npmjs.com/package/@vanillawc/wc-social-link)
 [![downloads](https://badgen.net/npm/dt/@vanillawc/wc-social-link)](https://www.npmjs.com/package/@vanillawc/wc-social-link)
 [![Known Vulnerabilities](https://snyk.io/test/npm/@vanillawc/wc-social-link/badge.svg)](https://snyk.io/test/npm/@vanillawc/wc-social-link)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/vanillawc/wc-social-link/master/LICENSE)
+[![Actions Status](https://github.com/vanillawc/wc-social-link/workflows/Release/badge.svg)](https://github.com/vanillawc/wc-social-link/actions)
 
 A Vanilla Web Component for easily defining links to social network profiles
 
