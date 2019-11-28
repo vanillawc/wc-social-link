@@ -17,6 +17,7 @@
     "build": "npm run clean && npm run build:assets",
     "clean": "npx rimraf ./assets/",
     "build:assets": "cp -r ./node_modules/vanillawc/assets/social-icons ./assets",
+    "package": "npx rimraf package && npm pack | tail -n 1 | xargs tar -xf",
     "preversion": "npm run lint",
     "postversion": "git push --follow-tags"
   },
