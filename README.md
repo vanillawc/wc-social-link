@@ -21,7 +21,7 @@ Networks supported include `[linkedin, github, twitter, stackoverflow]` but this
 npm i @vanillawc/wc-social-link
 ```
 
-The package can be found in `node_modules/@vanillawc/wc-social-link`.
+Then import the `index.js` file at the root of the package.
 
 -----
 
