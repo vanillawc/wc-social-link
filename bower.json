@@ -1,0 +1,13 @@
+{
+  "name": "@vanillawc/wc-social-link",
+  "authors": [
+    "Evan Plaice <evanplaice@gmail.com> (http://evanplaice.com/)"
+  ],
+  "keywords": [
+    "web-components",
+    "vanilla",
+    "social"
+  ],
+  "license": "MIT",
+  "dependencies": {}
+}
