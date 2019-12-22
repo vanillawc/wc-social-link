@@ -13,7 +13,7 @@
   "repository": "https://github.com/vanillawc/wc-social-link/",
   "main": "src/wc-social-link.js",
   "scripts": {
-    "start": "npx live-server --open=dev",
+    "start": "npx live-server --no-browser --open=dev",
     "lint": "semistandard",
     "build": "npm run clean && npm run build:assets",
     "clean": "npx rimraf ./assets/",

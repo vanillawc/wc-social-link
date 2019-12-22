@@ -38,18 +38,15 @@ export class WCSocialLink extends HTMLElement {
   constructor () {
     super();
     this.__initialized = false;
-    this.__networks = null;
-    this.__use = null;
-    this.__a = null;
-    this.innerHTML = WCSocialLink.default();
+    this.innerHTML = WCSocialLink.template();
+    this.__networks = WCSocialLink.networks();
+    this.__use = this.querySelector('use');
+    this.__a = this.querySelector('a');
   }
 
   async connectedCallback () {
     this.style.width = (this.style.width) ? this.style.width : '32px';
     this.style.height = (this.style.height) ? this.style.height : '32px';
-    this.__networks = WCSocialLink.networks();
-    this.__use = this.querySelector('use');
-    this.__a = this.querySelector('a');
 
     if (this.hasAttribute('network')) {
       this.setNetwork();
@@ -95,7 +92,7 @@ export class WCSocialLink extends HTMLElement {
     this.__a.setAttribute('title', title);
   }
 
-  static default () {
+  static template () {
     return `
       <a style="width: inherit; height: inherit">
         <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512" style="width: inherit; height: inherit;">
