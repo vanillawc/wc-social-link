@@ -64,7 +64,9 @@ Provide the name of the social network and your user handle
 
 Alternatively, instead of providing a handle and relying on the built-in link you can just provide your own.
 
+```html
 <wc-social network="github" href="https://github.com/evanplaice"></wc-social>
+```
 
 ***Demo: [WC-Social-Link - 'link'][]***
 
@@ -73,7 +75,9 @@ Alternatively, instead of providing a handle and relying on the built-in link yo
 
 For a11y, the component automatically defined a `title` attribute as `[network] link`. If you'd like to add a more compelling title, just define it as an attribute.
 
+```html
 <wc-social network="github" handle="evanplaice" title="Interesting Title"></wc-social>
+```
 
 ***Demo: [WC-Social-Link - 'title'][]***
 
@@ -82,11 +86,7 @@ For a11y, the component automatically defined a `title` attribute as `[network] 
 
 Stying the link can be done using standard CSS
 
-```html
-<wc-social network="github" href="https://github.com/evanplaice"></wc-social>
-```
-
-Default Styles
+**Default Styles**
 
 - width: 32px
 - height: 32px
