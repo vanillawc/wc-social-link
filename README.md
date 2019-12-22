@@ -12,7 +12,20 @@ A Vanilla Web Component for easily defining links to social network profiles
 
 This customponent provides a simple way to embed social network links into your site. The icons are optimized SVG symbols optimized for efficient loading and easy customizability.
 
-Networks supported include `[linkedin, github, twitter, stackoverflow]` but this list is expected to grow significantly. If you don't see a network you'd like to link to, check the [issues][] and add a new issue if you don't already see it listed.
+Link types supported include
+
+- email
+- github
+- gitlab
+- linkedin
+- rss
+- stackoverflow
+- twitch
+- twitter
+
+*Note More types can be requested in the [issues][].*
+
+[issues]: https://github.com/vanillawc/wc-social-link/issues
 
 -----
 
@@ -28,9 +41,16 @@ Then import the `index.js` file at the root of the package.
 
 ## Usage
 
+**Attributes**
+
+- network - the network type (ex twitter)
+- handle - the user handle/username
+- href - the link (optional)
+- title - the title/tooltip (optional)
+
 ### Basic Usage
 
-Provide the name of the social network (ex twitter) and your user handle (ie username)
+Provide the name of the social network and your user handle
 
 ```html
 <wc-social network="github" handle="evanplaice"></wc-social>
@@ -77,5 +97,4 @@ Default Styles
 [WC-Social-Link - Demo]: https://vanillawc.github.io/wc-social-link/demo/basic-usage.html
 [WC-Social-Link - 'link']: https://vanillawc.github.io/wc-social-link/demo/link-attribute.html
 [WC-Social-Link - 'title']: https://vanillawc.github.io/wc-social-link/demo/title-attribute.html
-[issues]: https://github.com/vanillawc/wc-social-link/issues
 [StackOverflow is dumb]: https://meta.stackexchange.com/a/914/147836
