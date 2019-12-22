@@ -4,6 +4,13 @@ export class WCSocialLink extends HTMLElement {
     return ['network', 'handle', 'href', 'title'];
   }
 
+  attributeChangedCallback (name, oldValue, newValue) {
+    if (!this.__initialized) { return; }
+    if (oldValue !== newValue) {
+      this[name] = newValue;
+    }
+  }
+
   get network () { return this.getAttribute('network'); }
   set network (value) {
     this.setAttribute('network', value);
@@ -26,12 +33,6 @@ export class WCSocialLink extends HTMLElement {
   set title (value) {
     this.setAttribute('title', value);
     this.setTitle();
-  }
-
-  attributeChangedCallback (name, oldValue, newValue) {
-    if (oldValue !== newValue) {
-      this[name] = newValue;
-    }
   }
 
   constructor () {
