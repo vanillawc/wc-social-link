@@ -23,7 +23,11 @@
     "postversion": "git push --follow-tags"
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.3",
     "semistandard": "^14.2.0",
     "vanillawc": "github:vanillawc/vanillawc"
+  },
+  "semistandard": {
+    "parser": "babel-eslint"
   }
 }
