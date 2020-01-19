@@ -10,7 +10,7 @@ A Vanilla Web Component for easily defining links to social network profiles
 
  <!-- TODO: Add video graphic here -->
 
-This customponent provides a simple way to embed social network links into your site. The icons are optimized SVG symbols optimized for efficient loading and easy customizability.
+This component provides a simple way to embed social network links into your site. The icons are optimized SVG symbols optimized for efficient loading and easy styling.
 
 Link types supported include
 
@@ -84,7 +84,7 @@ For a11y, the component automatically defined a `title` attribute as `[network] 
 
 ### Styling
 
-Stying the link can be done using standard CSS
+Styling the link can be done using standard CSS
 
 **Default Styles**
 
