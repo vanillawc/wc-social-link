@@ -139,7 +139,7 @@ class WCSocialLink extends HTMLElement {
 
   static assetDir () {
     const pathname = new URL(import.meta.url).href;
-    return pathname.split('/').slice(0, -2).join('/') + '/assets/';
+    return pathname.split('/').slice(0, -1).join('/') + '/assets/';
   }
 }
 
