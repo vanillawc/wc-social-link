@@ -67,7 +67,8 @@ export class WCSocialLink extends HTMLElement {
 
   setNetwork () {
     const network = this.getAttribute('network');
-    const href = `${WCSocialLink.assetDir()}${network}.svg#${network}`;
+    const assetDir = new URL('assets/', import.meta.url);
+    const href = `${assetDir}${network}.svg#${network}`;
     this.__use.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', href);
   }
 
@@ -135,11 +136,6 @@ export class WCSocialLink extends HTMLElement {
         title: 'Twitter Profile'
       }
     };
-  }
-
-  static assetDir () {
-    const pathname = new URL(import.meta.url).href;
-    return pathname.split('/').slice(0, -1).join('/') + '/assets/';
   }
 }
 
