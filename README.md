@@ -54,9 +54,7 @@ Provide the name of the social network and your user handle
 <wc-social network="github" handle="evanplaice"></wc-social>
 ```
 
-*Note: [StackOverflow is dumb][], your profile can't be linked to using just your username so you'll have to use your USERID as the handle.*
-
-***Demo: [WC-Social-Link - Demo][]***
+*Note: For Stackoverflow, your `USERID` is your handle*
 
 ### Basic Usage w/ Custom Link
 
@@ -66,9 +64,6 @@ Alternatively, instead of providing a handle and relying on the built-in link yo
 <wc-social network="github" href="https://github.com/evanplaice"></wc-social>
 ```
 
-***Demo: [WC-Social-Link - 'link'][]***
-
-
 ### Override the Title
 
 For a11y, the component automatically defined a `title` attribute as `[network] link`. If you'd like to add a more compelling title, just define it as an attribute.
@@ -76,9 +71,6 @@ For a11y, the component automatically defined a `title` attribute as `[network] 
 ```html
 <wc-social network="github" handle="evanplaice" title="Interesting Title"></wc-social>
 ```
-
-***Demo: [WC-Social-Link - 'title'][]***
-
 
 ### Styling
 
@@ -91,8 +83,8 @@ Styling the link can be done using standard CSS
 - stroke: black
 - fill: black
 
+-----
 
-[WC-Social-Link - Demo]: https://vanillawc.github.io/wc-social-link/demo/basic-usage.html
-[WC-Social-Link - 'link']: https://vanillawc.github.io/wc-social-link/demo/link-attribute.html
-[WC-Social-Link - 'title']: https://vanillawc.github.io/wc-social-link/demo/title-attribute.html
-[StackOverflow is dumb]: https://meta.stackexchange.com/a/914/147836
+## Demos
+
+### [WC-Social-Link-Demo - WebComponents.dev](https://webcomponents.dev/edit/urflGeFYnQ2S66ff46yE?sv=1&pm=1)
