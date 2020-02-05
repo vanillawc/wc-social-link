@@ -42,12 +42,16 @@ class WCSocialLink extends HTMLElement {
     this.shadowRoot.appendChild(this.__template.content.cloneNode(true));
     this.__networks = WCSocialLink.networks();
     this.__use = this.shadowRoot.querySelector('use');
-    this.__a = this.shadowRoot.querySelector('a');
   }
 
   async connectedCallback () {
-    this.setNetwork();
-    this.setHandle();
+    if (this.hasAttribute('network')) {
+      this.setNetwork();
+    }
+
+    if (this.hasAttribute('handle')) {
+      this.setHandle();
+    }
 
     if (this.hasAttribute('href')) {
       this.setHref();
@@ -58,8 +62,7 @@ class WCSocialLink extends HTMLElement {
 
   setNetwork () {
     const network = this.getAttribute('network');
-    const href = `#${network}`;
-    this.__use.setAttribute('href', href);
+    this.__use.setAttribute('href', `#${network}`);
     this.setAttribute('aria-label', `${this.__networks[network].label} Link`);
   }
 
@@ -68,13 +71,13 @@ class WCSocialLink extends HTMLElement {
     const network = this.getAttribute('network');
     if (!this.hasAttribute('href')) {
       const href = `${this.__networks[network].href}${handle}`;
-      this.__a.setAttribute('href', href);
+      this.shadowRoot.querySelector('a').href = href;
     }
   }
 
   setHref () {
     const href = this.getAttribute('href');
-    this.__a.setAttribute('href', href);
+    this.shadowRoot.querySelector('a').href = href;
   }
 
   static template () {
@@ -86,9 +89,19 @@ class WCSocialLink extends HTMLElement {
           stroke: var(--color, black);
           fill: var(--color, black);
         }
+
+        a {
+          width: var(--width, 32px);
+          height: var(--height, 32px);
+        }
+
+        svg {
+          width: var(--width, 32px);
+          height: var(--height, 32px);
+        }
       </style>
-      <a style="width: inherit; height: inherit">
-        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512" style="width: inherit; height: inherit;">
+      <a>
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512">
           <use />
         </svg></a>`;
   }
