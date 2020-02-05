@@ -71,8 +71,10 @@ export class WCSocialLink extends HTMLElement {
   setHandle () {
     const handle = this.getAttribute('handle');
     const network = this.getAttribute('network');
-    const href = `${this.__networks[network].href}${handle}`;
-    this.href = href;
+    if (!this.hasAttribute('href')) {
+      const href = `${this.__networks[network].href}${handle}`;
+      this.__a.setAttribute('href', href);
+    }
   }
 
   setHref () {
