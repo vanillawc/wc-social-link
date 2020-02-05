@@ -69,7 +69,7 @@ export class WCSocialLink extends HTMLElement {
     const network = this.getAttribute('network');
     const assetDir = new URL('assets/', import.meta.url);
     const href = `${assetDir}${network}.svg#${network}`;
-    this.__use.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', href);
+    this.__use.setAttribute('href', href);
   }
 
   setHandle () {
