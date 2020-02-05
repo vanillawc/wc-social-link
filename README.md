@@ -34,6 +34,12 @@ Then import the `index.js` file at the root of the package.
 - handle - the user handle/username
 - href - the link (optional)
 - title - the title/tooltip (optional)
+Custom Styles
+
+**Custom Styles**
+- `--width` - width of the icon (default `32px`)
+- `--height` - height of the icon (default `32px`)
+- `--color` - the icon color (default `black`)
 
 ### Basic Usage
 
@@ -62,17 +68,6 @@ Alternatively, instead of providing a handle and relying on the built-in link yo
 ```html
 <wc-social network="github" href="https://github.com/evanplaice"></wc-social>
 ```
-
-### Styling
-
-Styling the link can be done using standard CSS
-
-**Default Styles**
-
-- width: 32px
-- height: 32px
-- stroke: black
-- fill: black
 
 -----
 

@@ -46,9 +46,6 @@ export class WCSocialLink extends HTMLElement {
   }
 
   async connectedCallback () {
-    this.style.width = (this.style.width) ? this.style.width : '32px';
-    this.style.height = (this.style.height) ? this.style.height : '32px';
-
     if (this.hasAttribute('network')) {
       this.setNetwork();
     }
@@ -85,6 +82,14 @@ export class WCSocialLink extends HTMLElement {
 
   static template () {
     return `
+      <style>
+        :host {
+          width: var(--width, 32px);
+          height: var(--height, 32px);
+          stroke: var(--color, black);
+          fill: var(--color, black);
+        }
+      </style>
       <a style="width: inherit; height: inherit">
         <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512" style="width: inherit; height: inherit;">
           <use />
