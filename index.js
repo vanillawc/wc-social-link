@@ -46,13 +46,8 @@ class WCSocialLink extends HTMLElement {
   }
 
   async connectedCallback () {
-    if (this.hasAttribute('network')) {
-      this.setNetwork();
-    }
-
-    if (this.hasAttribute('handle')) {
-      this.setHandle();
-    }
+    this.setNetwork();
+    this.setHandle();
 
     if (this.hasAttribute('href')) {
       this.setHref();
@@ -71,8 +66,10 @@ class WCSocialLink extends HTMLElement {
   setHandle () {
     const handle = this.getAttribute('handle');
     const network = this.getAttribute('network');
-    const href = `${this.__networks[network].href}${handle}`;
-    this.href = href;
+    if (!this.hasAttribute('href')) {
+      const href = `${this.__networks[network].href}${handle}`;
+      this.__a.setAttribute('href', href);
+    }
   }
 
   setHref () {
