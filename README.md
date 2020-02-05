@@ -1,14 +1,12 @@
-[![GitHub Releases](https://img.shields.io/github/v/release/vanillawc/wc-social-link.svg)](https://github.com/vanillawc/wc-social-link/releases)
+[![GitHub Releases](https://badgen.net/github/tag/vanillawc/wc-social-link)](https://github.com/vanillawc/wc-social-link/releases)
 [![NPM Release](https://badgen.net/npm/v/@vanillawc/wc-social-link)](https://www.npmjs.com/package/@vanillawc/wc-social-link)
-[![Downloads](https://badgen.net/npm/dt/@vanillawc/wc-social-link)](https://www.npmjs.com/package/@vanillawc/wc-social-link)
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/vanillawc/wc-social-link/master/LICENSE)
+[![MIT License](https://badgen.net/github/license/vanillawc/wc-social-link)](https://raw.githubusercontent.com/vanillawc/wc-social-link/master/LICENSE)
 [![Published on WebComponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/vanillawc/wc-social-link)
 [![Latest Status](https://github.com/vanillawc/wc-social-link/workflows/Latest/badge.svg)](https://github.com/vanillawc/wc-social-link/actions)
 [![Release Status](https://github.com/vanillawc/wc-social-link/workflows/Release/badge.svg)](https://github.com/vanillawc/wc-social-link/actions)
+<!-- [![Bundlephobia](https://badgen.net/bundlephobia/minzip/@vanillawc/wc-social-link)](https://bundlephobia.com/result?p=@vanillawc/wc-social-link) -->
 
 A Vanilla Web Component for easily defining links to social network profiles
-
- <!-- TODO: Add video graphic here -->
 
 This component provides a simple way to embed social network links into your site. The icons are optimized SVG symbols optimized for efficient loading and easy styling.
 
