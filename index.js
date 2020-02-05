@@ -1,7 +1,7 @@
 /* eslint no-undef: 0 */
 class WCSocialLink extends HTMLElement {
   static get observedAttributes () {
-    return ['network', 'handle', 'href', 'title'];
+    return ['network', 'handle', 'href'];
   }
 
   attributeChangedCallback (name, oldValue, newValue) {
@@ -27,12 +27,6 @@ class WCSocialLink extends HTMLElement {
   set href (value) {
     this.setAttribute('href', value);
     this.setHref();
-  }
-
-  get title () { return this.getAttribute('title'); }
-  set title (value) {
-    this.setAttribute('title', value);
-    this.setTitle();
   }
 
   constructor () {
@@ -67,8 +61,6 @@ class WCSocialLink extends HTMLElement {
       this.setHref();
     }
 
-    this.setTitle();
-
     this.__initialized = true;
   }
 
@@ -76,6 +68,7 @@ class WCSocialLink extends HTMLElement {
     const network = this.getAttribute('network');
     const href = `#${network}`;
     this.__use.setAttribute('href', href);
+    this.setAttribute('aria-label', `${this.__networks[network].label} Link`);
   }
 
   setHandle () {
@@ -90,15 +83,6 @@ class WCSocialLink extends HTMLElement {
     this.__a.setAttribute('href', href);
   }
 
-  setTitle () {
-    let title = this.getAttribute('title');
-    if (!title) {
-      title = this.__networks[this.network].title;
-      this.setAttribute('title', title);
-    }
-    this.__a.setAttribute('title', title);
-  }
-
   static template () {
     return `
       <a style="width: inherit; height: inherit">
@@ -111,35 +95,35 @@ class WCSocialLink extends HTMLElement {
     return {
       email: {
         href: 'mailto://',
-        title: 'Email Address'
+        label: 'Email Address'
       },
       github: {
         href: 'https://github.com/',
-        title: 'GitHub Profile'
+        label: 'GitHub Profile'
       },
       gitlab: {
         href: 'https://gitlab.com/',
-        title: 'GitLab Profile'
+        label: 'GitLab Profile'
       },
       linkedin: {
         href: 'https://linkedin.com/in/',
-        title: 'LinkedIn Profile'
+        label: 'LinkedIn Profile'
       },
       rss: {
         href: 'https://',
-        title: 'RSS Feed'
+        label: 'RSS Feed'
       },
       stackoverflow: {
         href: 'https://stackoverflow.com/u/',
-        title: 'StackOverflow Profile'
+        label: 'StackOverflow Profile'
       },
       twitch: {
         href: 'https://twitch.tv/',
-        title: 'Twitch Channel'
+        label: 'Twitch Channel'
       },
       twitter: {
         href: 'https://twitter.com/',
-        title: 'Twitter Profile'
+        label: 'Twitter Profile'
       }
     };
   }

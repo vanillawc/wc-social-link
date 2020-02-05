@@ -10,17 +10,6 @@ A Vanilla Web Component for easily defining links to social network profiles
 
 This component provides a simple way to embed social network links into your site. The icons are optimized SVG symbols optimized for efficient loading and easy styling.
 
-Link types supported include
-
-- email
-- github
-- gitlab
-- linkedin
-- rss
-- stackoverflow
-- twitch
-- twitter
-
 *Note More types can be requested in the [issues][].*
 
 [issues]: https://github.com/vanillawc/wc-social-link/issues
@@ -54,6 +43,16 @@ Provide the name of the social network and your user handle
 <wc-social network="github" handle="evanplaice"></wc-social>
 ```
 
+**Network Types**
+- email
+- github
+- gitlab
+- linkedin
+- rss
+- stackoverflow
+- twitch
+- twitter
+
 *Note: For Stackoverflow, your `USERID` is your handle*
 
 ### Basic Usage w/ Custom Link
@@ -62,14 +61,6 @@ Alternatively, instead of providing a handle and relying on the built-in link yo
 
 ```html
 <wc-social network="github" href="https://github.com/evanplaice"></wc-social>
-```
-
-### Override the Title
-
-For a11y, the component automatically defined a `title` attribute as `[network] link`. If you'd like to add a more compelling title, just define it as an attribute.
-
-```html
-<wc-social network="github" handle="evanplaice" title="Interesting Title"></wc-social>
 ```
 
 ### Styling
