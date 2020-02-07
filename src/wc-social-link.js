@@ -109,7 +109,7 @@ export class WCSocialLink extends HTMLElement {
   static networks () {
     return {
       email: {
-        href: 'mailto://',
+        href: 'mailto:',
         label: 'Email Address'
       },
       github: {
