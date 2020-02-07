@@ -31,6 +31,7 @@ export class WCSocialLink extends HTMLElement {
 
   constructor () {
     super();
+    this.setAttribute('role', 'link');
     this.__initialized = false;
     this.attachShadow({ mode: 'open' });
     this.__svgs = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
@@ -63,7 +64,9 @@ export class WCSocialLink extends HTMLElement {
   setNetwork () {
     const network = this.getAttribute('network');
     this.__use.setAttribute('href', `#${network}`);
-    this.setAttribute('aria-label', `${this.__networks[network].label} Link`);
+    const label = `${this.__networks[network].label} Link`;
+    this.setAttribute('aria-label', label);
+    this.shadowRoot.querySelector('a').setAttribute('aria-label', label);
   }
 
   setHandle () {
@@ -100,7 +103,7 @@ export class WCSocialLink extends HTMLElement {
           height: var(--height, 32px);
         }
       </style>
-      <a>
+      <a role="none">
         <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512">
           <use />
         </svg></a>`;
