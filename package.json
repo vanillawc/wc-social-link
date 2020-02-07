@@ -1,6 +1,6 @@
 {
   "name": "@vanillawc/wc-social-link",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "license": "MIT",
   "author": "Evan Plaice <evanplaice@gmail.com> (https://evanplaice.com/)",
   "description": "A vanilla web component for social media links",
