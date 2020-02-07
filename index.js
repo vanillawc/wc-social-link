@@ -31,7 +31,6 @@ class WCSocialLink extends HTMLElement {
 
   constructor () {
     super();
-    this.setAttribute('role', 'link');
     this.__initialized = false;
     this.attachShadow({ mode: 'open' });
     this.__svgs = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
@@ -46,6 +45,8 @@ class WCSocialLink extends HTMLElement {
   }
 
   async connectedCallback () {
+    this.setAttribute('role', 'link');
+
     if (this.hasAttribute('network')) {
       this.setNetwork();
     }
@@ -102,7 +103,7 @@ class WCSocialLink extends HTMLElement {
           height: var(--height, 32px);
         }
       </style>
-      <a role="none" aria-label="not used">
+      <a role="none" aria-label="N/A">
         <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512">
           <use />
         </svg></a>`;
