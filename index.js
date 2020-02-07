@@ -66,7 +66,6 @@ class WCSocialLink extends HTMLElement {
     this.__use.setAttribute('href', `#${network}`);
     const label = `${this.__networks[network].label} Link`;
     this.setAttribute('aria-label', label);
-    this.shadowRoot.querySelector('a').setAttribute('aria-label', label);
   }
 
   setHandle () {
@@ -103,7 +102,7 @@ class WCSocialLink extends HTMLElement {
           height: var(--height, 32px);
         }
       </style>
-      <a>
+      <a role="none" aria-label="not used">
         <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512">
           <use />
         </svg></a>`;
