@@ -46,7 +46,7 @@ Custom Styles
 Provide the name of the social network and your user handle
 
 ```html
-<wc-social network="github" handle="evanplaice"></wc-social>
+<wc-social-link network="github" handle="evanplaice"></wc-social-link>
 ```
 
 **Network Types**
@@ -66,7 +66,7 @@ Provide the name of the social network and your user handle
 Alternatively, instead of providing a handle and relying on the built-in link you can just provide your own.
 
 ```html
-<wc-social network="github" href="https://github.com/evanplaice"></wc-social>
+<wc-social-link network="github" href="https://github.com/evanplaice"></wc-social-link>
 ```
 
 -----
