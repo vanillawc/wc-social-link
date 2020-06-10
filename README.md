@@ -1,30 +1,35 @@
-[![GitHub Releases](https://badgen.net/github/tag/vanillawc/wc-social-link)](https://github.com/vanillawc/wc-social-link/releases)
-[![NPM Release](https://badgen.net/npm/v/@vanillawc/wc-social-link)](https://www.npmjs.com/package/@vanillawc/wc-social-link)
-[![Bundlephobia](https://badgen.net/bundlephobia/minzip/@vanillawc/wc-social-link)](https://bundlephobia.com/result?p=@vanillawc/wc-social-link)
-[![MIT License](https://badgen.net/github/license/vanillawc/wc-social-link)](https://raw.githubusercontent.com/vanillawc/wc-social-link/master/LICENSE)
-[![Published on WebComponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/vanillawc/wc-social-link)
-[![Latest Status](https://github.com/vanillawc/wc-social-link/workflows/Latest/badge.svg)](https://github.com/vanillawc/wc-social-link/actions)
-[![Release Status](https://github.com/vanillawc/wc-social-link/workflows/Release/badge.svg)](https://github.com/vanillawc/wc-social-link/actions)
+<h1 align="center">&lt;wc-social-link&gt;: Icon Links for Social Media</h1>
 
-A Vanilla Web Component for easily defining links to social network profiles
-
-This component provides a simple way to embed social network links into your site. The icons are optimized SVG symbols optimized for efficient loading and easy styling.
-
-*Note More types can be requested in the [issues][].*
-
-[issues]: https://github.com/vanillawc/wc-social-link/issues
-
------
+<div align="center">
+  <a href="https://github.com/vanillawc/wc-social-link/releases"><img src="https://badgen.net/github/tag/vanillawc/wc-social-link" alt="GitHub Releases"></a>
+  <a href="https://www.npmjs.com/package/@vanillawc/wc-social-link"><img src="https://badgen.net/npm/v/@vanillawc/wc-social-link" alt="NPM Releases"></a>
+  <a href="https://bundlephobia.com/result?p=@vanillawc/wc-social-link"><img src="https://badgen.net/bundlephobia/minzip/@vanillawc/wc-social-link" alt="Bundlephobia"></a>
+  <a href="https://raw.githubusercontent.com/vanillawc/wc-social-link/master/LICENSE"><img src="https://badgen.net/github/license/vanillawc/wc-social-link" alt="MIT License"></a>
+  <a href="https://www.webcomponents.org/element/vanillawc/wc-social-link"><img src="https://img.shields.io/badge/webcomponents.org-published-blue.svg" alt="Published on WebComponents.org"></a>
+  <a href="https://github.com/vanillawc/wc-social-link/actions"><img src="https://github.com/vanillawc/wc-social-link/workflows/Latest/badge.svg" alt="Latest Status"></a>
+  <a href="https://github.com/vanillawc/wc-social-link/actions"><img src="https://github.com/vanillawc/wc-social-link/workflows/Release/badge.svg" alt="Release Status"></a>
+</div>
 
 ## Installation
 
+*Installation*
 ```sh
 npm i @vanillawc/wc-social-link
 ```
 
-Then import the `index.js` file at the root of the package.
+*Import from NPM*
+```html
+<script type="module" src="node_modules/@vanillawc/wc-social-link/index.js"></script>
+```
 
------
+*Import from CDN*
+```html
+<script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-social-link/index.js"></script>
+```
+
+## Demo
+
+Try it on [WebComponents.dev](https://webcomponents.dev/edit/urflGeFYnQ2S66ff46yE?sv=1&pm=1)
 
 ## Usage
 
@@ -68,9 +73,3 @@ Alternatively, instead of providing a handle and relying on the built-in link yo
 ```html
 <wc-social-link network="github" href="https://github.com/evanplaice"></wc-social-link>
 ```
-
------
-
-## Demos
-
-### [WC-Social-Link-Demo - WebComponents.dev](https://webcomponents.dev/edit/urflGeFYnQ2S66ff46yE?sv=1&pm=1)
