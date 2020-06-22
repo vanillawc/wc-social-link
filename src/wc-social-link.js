@@ -1,86 +1,86 @@
 /* eslint no-undef: 0 */
 export class WCSocialLink extends HTMLElement {
   static get observedAttributes () {
-    return ['network', 'handle', 'href'];
+    return ['network', 'handle', 'href']
   }
 
   attributeChangedCallback (name, oldValue, newValue) {
-    if (!this.__initialized) { return; }
+    if (!this.__initialized) { return }
     if (oldValue !== newValue) {
-      this[name] = newValue;
+      this[name] = newValue
     }
   }
 
-  get network () { return this.getAttribute('network'); }
+  get network () { return this.getAttribute('network') }
   set network (value) {
-    this.setAttribute('network', value);
-    this.setNetwork();
+    this.setAttribute('network', value)
+    this.setNetwork()
   }
 
-  get handle () { return this.getAttribute('handle'); }
+  get handle () { return this.getAttribute('handle') }
   set handle (value) {
-    this.setAttribute('handle', value);
-    this.setHandle();
+    this.setAttribute('handle', value)
+    this.setHandle()
   }
 
-  get href () { return this.getAttribute('href'); }
+  get href () { return this.getAttribute('href') }
   set href (value) {
-    this.setAttribute('href', value);
-    this.setHref();
+    this.setAttribute('href', value)
+    this.setHref()
   }
 
   constructor () {
-    super();
-    this.__initialized = false;
-    this.attachShadow({ mode: 'open' });
-    this.__svgs = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    this.__svgs.style.display = 'none';
-    this.__svgs.innerHTML = WCSocialLink.svgs();
-    this.shadowRoot.appendChild(this.__svgs);
-    this.__template = document.createElement('template');
-    this.__template.innerHTML = WCSocialLink.template();
-    this.shadowRoot.appendChild(this.__template.content.cloneNode(true));
-    this.__networks = WCSocialLink.networks();
-    this.__use = this.shadowRoot.querySelector('use');
+    super()
+    this.__initialized = false
+    this.attachShadow({ mode: 'open' })
+    this.__svgs = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+    this.__svgs.style.display = 'none'
+    this.__svgs.innerHTML = WCSocialLink.svgs()
+    this.shadowRoot.appendChild(this.__svgs)
+    this.__template = document.createElement('template')
+    this.__template.innerHTML = WCSocialLink.template()
+    this.shadowRoot.appendChild(this.__template.content.cloneNode(true))
+    this.__networks = WCSocialLink.networks()
+    this.__use = this.shadowRoot.querySelector('use')
   }
 
   async connectedCallback () {
-    this.setAttribute('role', 'link');
+    this.setAttribute('role', 'link')
 
     if (this.hasAttribute('network')) {
-      this.setNetwork();
+      this.setNetwork()
     }
 
     if (this.hasAttribute('handle')) {
-      this.setHandle();
+      this.setHandle()
     }
 
     if (this.hasAttribute('href')) {
-      this.setHref();
+      this.setHref()
     }
 
-    this.__initialized = true;
+    this.__initialized = true
   }
 
   setNetwork () {
-    const network = this.getAttribute('network');
-    this.__use.setAttribute('href', `#${network}`);
-    const label = `${this.__networks[network].label} Link`;
-    this.setAttribute('aria-label', label);
+    const network = this.getAttribute('network')
+    this.__use.setAttribute('href', `#${network}`)
+    const label = `${this.__networks[network].label} Link`
+    this.setAttribute('aria-label', label)
   }
 
   setHandle () {
-    const handle = this.getAttribute('handle');
-    const network = this.getAttribute('network');
+    const handle = this.getAttribute('handle')
+    const network = this.getAttribute('network')
     if (!this.hasAttribute('href')) {
-      const href = `${this.__networks[network].href}${handle}`;
-      this.shadowRoot.querySelector('a').href = href;
+      const href = `${this.__networks[network].href}${handle}`
+      this.shadowRoot.querySelector('a').href = href
     }
   }
 
   setHref () {
-    const href = this.getAttribute('href');
-    this.shadowRoot.querySelector('a').href = href;
+    const href = this.getAttribute('href')
+    this.shadowRoot.querySelector('a').href = href
   }
 
   static template () {
@@ -106,7 +106,7 @@ export class WCSocialLink extends HTMLElement {
       <a role="none" aria-label="N/A">
         <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512">
           <use />
-        </svg></a>`;
+        </svg></a>`
   }
 
   static networks () {
@@ -151,7 +151,7 @@ export class WCSocialLink extends HTMLElement {
         href: 'https://instagram.com/',
         label: 'Instagram Profile'
       }
-    };
+    }
   }
 
   static svgs () {
@@ -193,8 +193,8 @@ export class WCSocialLink extends HTMLElement {
       <symbol id="instagram" stroke="inherit" fill="inherit">
         <path d="m510.95 150.5c-1.1992-27.199-5.5977-45.898-11.898-62.102-6.5-17.199-16.5-32.598-29.602-45.398-12.801-13-28.301-23.102-45.301-29.5-16.297-6.3008-34.898-10.699-62.098-11.898-27.402-1.3008-36.102-1.6016-105.6-1.6016s-78.199 0.30078-105.5 1.5c-27.199 1.1992-45.898 5.6016-62.098 11.898-17.203 6.5-32.602 16.5-45.402 29.602-13 12.801-23.098 28.301-29.5 45.301-6.3008 16.301-10.699 34.898-11.898 62.098-1.3008 27.402-1.6016 36.102-1.6016 105.6s0.30078 78.199 1.5 105.5c1.1992 27.199 5.6016 45.898 11.902 62.102 6.5 17.199 16.598 32.598 29.598 45.398 12.801 13 28.301 23.102 45.301 29.5 16.301 6.3008 34.898 10.699 62.102 11.898 27.297 1.2031 36 1.5 105.5 1.5s78.199-0.29688 105.5-1.5c27.199-1.1992 45.898-5.5977 62.098-11.898 34.402-13.301 61.602-40.5 74.902-74.898 6.2969-16.301 10.699-34.902 11.898-62.102 1.1992-27.301 1.5-36 1.5-105.5s-0.10156-78.199-1.3008-105.5zm-46.098 209c-1.1016 25-5.3008 38.5-8.8008 47.5-8.6016 22.301-26.301 40-48.602 48.602-9 3.5-22.598 7.6992-47.5 8.7969-27 1.2031-35.098 1.5-103.4 1.5s-76.5-0.29688-103.4-1.5c-25-1.0977-38.5-5.2969-47.5-8.7969-11.098-4.1016-21.199-10.602-29.398-19.102-8.5-8.3008-15-18.301-19.102-29.398-3.5-9-7.6992-22.602-8.7969-47.5-1.2031-27-1.5-35.102-1.5-103.4s0.29688-76.5 1.5-103.4c1.0977-25 5.2969-38.5 8.7969-47.5 4.1016-11.102 10.602-21.199 19.203-29.402 8.2969-8.5 18.297-15 29.398-19.098 9-3.5 22.602-7.6992 47.5-8.8008 27-1.1992 35.102-1.5 103.4-1.5 68.402 0 76.5 0.30078 103.4 1.5 25 1.1016 38.5 5.3008 47.5 8.8008 11.098 4.0977 21.199 10.598 29.398 19.098 8.5 8.3008 15 18.301 19.102 29.402 3.5 9 7.6992 22.598 8.8008 47.5 1.1992 27 1.5 35.098 1.5 103.4s-0.30078 76.301-1.5 103.3z"/><path d="m256.45 124.5c-72.598 0-131.5 58.898-131.5 131.5s58.902 131.5 131.5 131.5c72.602 0 131.5-58.898 131.5-131.5s-58.898-131.5-131.5-131.5zm0 216.8c-47.098 0-85.301-38.199-85.301-85.301s38.203-85.301 85.301-85.301c47.102 0 85.301 38.199 85.301 85.301s-38.199 85.301-85.301 85.301z"/><path d="m423.85 119.3c0 16.953-13.746 30.699-30.703 30.699-16.953 0-30.699-13.746-30.699-30.699 0-16.957 13.746-30.699 30.699-30.699 16.957 0 30.703 13.742 30.703 30.699z"/>
       </symbol>
-    </svg>`;
+    </svg>`
   }
 }
 
-customElements.define('wc-social-link', WCSocialLink);
+customElements.define('wc-social-link', WCSocialLink)
