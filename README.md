@@ -1,4 +1,4 @@
-<h1 align="center">&lt;wc-social-link&gt;: Icon Links for Social Media</h1>
+<h1 align="center">&lt;wc-social-link&gt; Icon Links for Social Media</h1>
 
 <div align="center">
   <a href="https://github.com/vanillawc/wc-social-link/releases"><img src="https://badgen.net/github/tag/vanillawc/wc-social-link" alt="GitHub Releases"></a>
