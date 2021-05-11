@@ -1,5 +1,5 @@
 // src/wc-social-link.js
-class WCSocialLink extends HTMLElement {
+var WCSocialLink = class extends HTMLElement {
   static get observedAttributes() {
     return ["network", "handle", "href"];
   }
@@ -187,7 +187,7 @@ class WCSocialLink extends HTMLElement {
       </symbol>
     </svg>`;
   }
-}
+};
 customElements.define("wc-social-link", WCSocialLink);
 export {
   WCSocialLink
